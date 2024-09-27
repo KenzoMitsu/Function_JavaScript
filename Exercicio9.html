@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function contarDigitos(numero) {
+            if (isNaN(numero)) {
+                alert("Erro: O caracter inserido não é um número, por favor insira um número inteiro válido.")
+                return
+            }
+    
+            let digitos = numero.toString()
+    
+            if (digitos[0] === '-') {
+                digitos = digitos.slice(1)
+            }
+            alert("Quantidade de dígitos: " + digitos.length)
+        }
+        
+        let numeroInformado = prompt('Digite um número inteiro:')
+        contarDigitos(numeroInformado)
+    </script>  
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calcularOperacao(valor1, valor2, simbolo) {
+            let resultado;
+    
+            if (simbolo === '+') {
+                resultado = valor1 + valor2;
+            } else if (simbolo === '-') {
+                resultado = valor1 - valor2;
+            } else if (simbolo === '/') {
+                if (valor2 !== 0) {
+                    resultado = valor1 / valor2;
+                } else {
+                    return "Erro: Divisão por zero.";
+                }
+            } else if (simbolo === '*') {
+                resultado = valor1 * valor2;
+            } else {
+                return "Erro: Símbolo inválido.";
+            }
+            return resultado;
+        }
+    
+        let valor1 = parseFloat(prompt('Insira o primeiro valor: '));
+        let valor2 = parseFloat(prompt('Insira o segundo valor: '));
+        let simbolo = prompt('Digite o símbolo da operação desejada (+, -, /, *): ');
+    
+        let resultado = calcularOperacao(valor1, valor2, simbolo);
+    
+        if (resultado === "Erro: Divisão por zero." || resultado === "Erro: Símbolo inválido.") {
+            alert(resultado);
+        } else {
+            alert("Resultado: " + resultado.toFixed(2));
+        }
+    </script>    
+
+</body>
+</html>

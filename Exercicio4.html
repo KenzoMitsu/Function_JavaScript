@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Obs: nota1 = peso 5, nota2 = peso 3, e nota3 = peso 2
+        function calculoMedia(nota1, nota2, nota3, tipo) {
+        let media
+    
+        if (tipo === 'A') {
+            media = (nota1 + nota2 + nota3) / 3
+        } else if (tipo === 'P') {
+            media = ((nota1 * 5) + (nota2 * 3) + (nota3 * 2)) / 10
+        }
+        return media;
+    }
+
+    let nota1 = parseFloat(prompt('Insira a sua primeira nota: '))
+    let nota2 = parseFloat(prompt('Insira a sua segunda nota: '))
+    let nota3 = parseFloat(prompt('Insira a sua terceira nota: '))
+    let tipo = prompt('Digite "P" para calcular a média ponderada e "A" para a média aritmética: ')
+    
+    let resultado = calculoMedia(nota1, nota2, nota3, tipo)
+    
+    if (tipo === 'A') {
+        alert("Nota média (Aritmética): " + resultado.toFixed(2))
+    } else if (tipo === 'P') {
+        alert("Nota média (Ponderada): " + resultado.toFixed(2))
+    } else {
+        alert("Tipo de média inválido. Por favor, digite 'A' ou 'P'.")
+    }
+
+    </script>
+    
+</body>
+</html>
